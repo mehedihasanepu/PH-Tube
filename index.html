@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>PH Tube</title>
 </head>
-<body>
-    <p>hi</p>
+
+<body class="max-w-sm md:max-w-screen-sm lg:max-w-screen-xl mx-auto my-6">
+    <header>
+        <nav>
+            <div class="navbar bg-base-100 ">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box ">
+                            <li><a>Sort by view</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img class="w-32" src="image/Logo.png" alt="">
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <a class="btn normal-case ">Sort by view</a>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn normal-case px-5 text-white hover:bg-[#9a0015] bg-[#FF1F3D]">Blog</a>
+                </div>
+            </div>
+        </nav>
+        <hr class="border-t-gray-300">
+    </header>
+    <main>
+        <!-- tab button  -->
+        <div id="category-container" class="tabs mt-10 gap-6 justify-center">
+
+        </div>
+
+
+
+
+
+        <!-- card section  -->
+        <section class="my-16">
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!--                 <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://i.ibb.co/L1b6xSq/shape.jpg" alt="Shoes" /></figure>
+                    <div class="card-body flex flex-row gap-3">
+                        <div>
+                            <img class="w-16 h-12 rounded-full" src="https://i.ibb.co/D9wWRM6/olivia.jpg" alt="">
+                        </div>
+                        <div>
+                            <h2 class="text-base font-bold">Building a Winning UX Strategy Using the Kano Model</h2>
+                            <div class="flex gap-3 items-center my-2">
+                                <span>Awlad Hossain</span>
+                                <img class="w-4 h-4" src="image/verity.png" alt="">
+                            </div>
+                            <p>91K views</p>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+            <div id="empty-tab">
+    
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+
+    <script src="js/ph-tube.js"></script>
 </body>
+
 </html>
