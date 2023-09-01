@@ -24,44 +24,39 @@ const cardsData = async (id) => {
     const data = await res.json();
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    if (data.data.length > 0) {
-        data.data.forEach((cardData) => {
-            const div = document.createElement('div');
-            div.innerHTML = `
-                <div class="card card-compact bg-base-100 shadow-xl">
-                <figure><img class="h-52 w-full" src="${cardData.thumbnail}" alt="Shoes" /></figure>
-                <div class="card-body flex flex-row gap-3">
-                    <div>
-                        <img class="w-10 h-10 rounded-full" src="${cardData.authors[0].profile_picture}" alt="">
-                    </div>
-                    <div>
-                        <h2 class="text-base font-bold">${cardData.title}</h2>
-                        <div class="flex gap-3 items-center my-2">
-                            <span>${cardData.authors[0].profile_name}</span>
-                            <img class="w-4 h-4" src="${cardData.authors[0].verified ? 'image/verity.png' : ''}" alt="">
-                        </div>
-                        <p>${cardData.others.views} views</p>
-                    </div>
-                </div>
-            </div>
-        `
-            cardContainer.appendChild(div);
-        }
-
-        )
+    const errorMessage = document.getElementById('no-data-error-message');
+    if (data.data.length === 0) {
+        errorMessage.classList.remove('hidden');
     }
     else {
-        const emptyTab = document.getElementById('empty-tab');
-        const div = document.createElement('div');
-        emptyTab.innerHTML = '';
-        div.innerHTML = `
-        <div class="max-w-xl mx-auto my-auto mt-16">
-             <img class="mx-auto" src="image/Icon.png" alt="">
-             <h1 class="text-3xl font-bold pt-10">Oops!! Sorry, There is no content here</h1>
-        </div>
-        `
-        emptyTab.appendChild(div)
+        errorMessage.classList.add('hidden');
     }
+
+    data.data.forEach((cardData) => {
+        const div = document.createElement('div');
+        const verifyImg  = `<img class="w-4 h-4" src="image/verify.png" alt=""></img>`
+        div.innerHTML = `
+            <div class="card card-compact bg-base-100 shadow-xl">
+            <figure><img class="h-52 w-full" src="${cardData.thumbnail}" alt="Shoes" /></figure>
+            <div class="card-body flex flex-row gap-3">
+                <div>
+                    <img class="w-10 h-10 rounded-full" src="${cardData.authors[0].profile_picture}" alt="">
+                </div>
+                <div>
+                    <h2 class="text-base font-bold">${cardData.title}</h2>
+                    <div class="flex gap-3 items-center my-2">
+                        <span>${cardData.authors[0].profile_name}</span>
+                        <p> ${cardData.authors[0].verified === true ? verifyImg : ''} </p>
+                    </div>
+                    <p>${cardData.others.views} views</p>
+                </div>
+            </div>
+        </div>
+    `
+        cardContainer.appendChild(div);
+    }
+
+    )
 }
 
 
