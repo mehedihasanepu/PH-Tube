@@ -16,7 +16,7 @@ const loadCategoryData = async () => {
 }
 
 
-// card section 
+// card data load 
 const cardsData = async (id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
     const data = await res.json();
@@ -31,6 +31,8 @@ const cardsData = async (id) => {
         errorMessage.classList.add('hidden');
     }
 
+
+    // timer section 
     data.data.forEach((cardData) => {
         const convertSec = (sec) => {
             const hrs = Math.floor(sec / 3600);
@@ -42,22 +44,14 @@ const cardsData = async (id) => {
         console.log(hrs, min);
 
 
-
-
-
-
-
-
-
-
-
+        // card section 
         const div = document.createElement('div');
         const verifyImg = `<img class="w-4 h-4" src="image/verify.png" alt=""></img>`
         div.innerHTML = `
             <div class="card card-compact bg-base-100 shadow-xl relative">
             <figure><img class="h-52 w-full" src="${cardData.thumbnail}" alt="Shoes" /></figure>
             <div>
-                <p id="timer" class='absolute bottom-32 right-2 px-2 py-1 rounded-sm bg-black text-white text-sm '>${hrs === 0 ? '' : hrs}${hrs === 0 ? '' : ' hrs'}${min === 0 ? '' : min}${min === 0 ? '' : ' min'}${hrs === 0 ? '' : ' ago'}</p>
+                <p id="timer" class='absolute bottom-32 right-2 px-2 py-1 rounded-sm bg-black text-white text-sm '>${hrs === 0 ? '' : hrs}${hrs === 0 ? '' : 'hrs '}${min === 0 ? '' : min}${min === 0 ? '' : 'min '}${hrs === 0 ? '' : ' ago'}</p>
             </div>
             <div class="card-body flex flex-row gap-3">
                 <div>

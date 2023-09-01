@@ -10,12 +10,56 @@
 </head>
 
 <body class="max-w-sm md:max-w-screen-sm lg:max-w-screen-xl mx-auto my-6">
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div class="card card-side bg-base-100 shadow-xl p-6 lg:p-3 flex flex-col">
+
+    <header>
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a onclick="my_modal_5.showModal()">var, let and const</a></li>
+                            <li><a onclick="my_modal_6.showModal()">Null vs Undefined</a></li>
+                            <li><a onclick="my_modal_7.showModal()">REST API</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img class="w-10" src="image/play-icon.png" alt="">
+                        <p class="text-lg md:text-2xl font-bold"><span class="text-[#FF1F3D] ">PH </span>Tube</p>
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a onclick="my_modal_5.showModal()">var, let and const</a></li>
+                        <li><a onclick="my_modal_6.showModal()">Null vs Undefined</a></li>
+                        <li><a onclick="my_modal_7.showModal()">REST API</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a href="index.html" class="btn normal-case px-5 text-white hover:bg-[#9a0015] bg-[#FF1F3D]">PH
+                        Tube</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 md:gap-5 lg:gap-10">
+        <div class="card card-side bg-base-100 shadow-xl p-6 md:p-2 lg:p-3 flex flex-col">
             <figure><img class="rounded-2xl w-11/12" src="image/var-let-const.webp" alt="Movie" /></figure>
             <div class="card-body ">
-                <h2 class="text-xl font-bold">Difference between var, Let and const</h2>
-                <p>In JavaScript, there are three ways to declare variables: var, let, and const. All three are used to declare variables, but they differ in their scope and re-assignability .Var declarations are either globally scoped or function...</p>
+                <h2 class="text-xl font-bold">Difference between var, let and const</h2>
+                <p>In JavaScript, there are three ways to declare variables: var, let, and const. All three are used to
+                    declare variables, but they differ in their scope and re-assignability .Var declarations are either
+                    globally scoped or function...</p>
 
 
                 <div class="card-actions justify-end">
@@ -23,9 +67,34 @@
                     <button class="btn normal-case" onclick="my_modal_5.showModal()">Read more</button>
                     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                         <form method="dialog" class="modal-box w-11/12 max-w-5xl mx-auto">
-                            <h3 class="font-bold text-lg">Hello!</h3>
-                            <p class="py-4">Press ESC key or click the button below to close Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et repellat eum, molestiae, laudantium amet incidunt ipsa autem, perspiciatis sapiente at dolor odio labore nemo dolores dolore ex! Quod adipisci vitae inventore voluptas, quae harum cum culpa, animi assumenda provident laudantium? Omnis perspiciatis accusantium odit nisi magnam odio blanditiis error illum placeat sequi, laborum repellendus eaque, deserunt culpa quo fugiat quia itaque doloremque facere corrupti ipsa. Iste dolorem eveniet, repellendus eos eum eaque atque</p>
-                            <div class="modal-action">
+                            <div class="p-10">
+                                <h2 class="text-xl font-bold">Difference between var, let and const</h2>
+                                <hr>
+                                <p class="text-lg font-semibold pt-2">In JavaScript, there are three ways to declare
+                                    variables: var, let, and const..</p>
+                                <h2 class="text-4xl font-bold py-4">Var vs Let vs Const</h2>
+                                <ul role="list" class="marker:text-black list-disc">
+                                    <li>var is the oldest of the three keywords and has been around since the beginning
+                                        of JavaScript. It is function-scoped, which means that a variable declared with
+                                        var is only accessible within the function in which it is declared. var
+                                        variables can be updated and re-declared within their scope.</li>
+                                    <li>let is a newer keyword that was introduced in ES6. It is also function-scoped,
+                                        but it has a few additional features that make it more reliable than var. For
+                                        example, let variables are not hoisted, which means that they are not defined
+                                        until the point at which they are first used. This can help to prevent errors
+                                        caused by accessing a variable before it has been defined. let variables can
+                                        also be updated, but they cannot be re-declared.</li>
+                                    <li>const is the newest of the three keywords and was also introduced in ES6. It is
+                                        block-scoped, which means that a variable declared with const is only accessible
+                                        within the block in which it is declared. const variables cannot be updated or
+                                        re-declared. This makes them ideal for declaring variables that should not be
+                                        changed, such as constants.</li>
+                                </ul>
+                                <p class="text-lg font-semibold py-5">In general, it is recommended to use let instead
+                                    of var. let is more reliable and has fewer potential for errors. However, const
+                                    should be used when you need to declare a variable that should not be changed.</p>
+                            </div>
+                            <div class="modal-action ">
                                 <!-- if there is a button in form, it will close the modal -->
                                 <button class="btn normal-case">Close</button>
                             </div>
@@ -41,11 +110,12 @@
 
 
 
-        <div class="card card-side bg-base-100 shadow-xl p-6 lg:p-3 flex flex-col">
+        <div class="card card-side bg-base-100 shadow-xl p-6 md:p-2 lg:p-3 flex flex-col">
             <figure><img class="rounded-2xl w-11/12" src="image/null-undefined.webp" alt="Movie" /></figure>
             <div class="card-body ">
                 <h2 class="text-xl font-bold">Use cases of null and undefined</h2>
-                <p>Null and undefined are two distinct data types with different use cases. Undefined means that a variable has been declared but not assigned a value, while null is an assignment value</p>
+                <p>Null and undefined are two distinct data types with different use cases. Undefined means that a
+                    variable has been declared but not assigned a value, while null is an assignment value</p>
 
 
                 <div class="card-actions justify-end">
@@ -53,9 +123,28 @@
                     <button class="btn normal-case" onclick="my_modal_6.showModal()">Read more</button>
                     <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
                         <form method="dialog" class="modal-box w-11/12 max-w-5xl mx-auto">
-                            <h3 class="font-bold text-lg">Hello!</h3>
-                            <p class="py-4">Press ESC key or click the button below to close Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et repellat eum, molestiae, laudantium amet incidunt ipsa autem, perspiciatis sapiente at dolor odio labore nemo dolores dolore ex! Quod adipisci vitae inventore voluptas, quae harum cum culpa, animi assumenda provident laudantium? Omnis perspiciatis accusantium odit nisi magnam odio blanditiis error illum placeat sequi, laborum repellendus eaque, deserunt culpa quo fugiat quia itaque doloremque facere corrupti ipsa. Iste dolorem eveniet, repellendus eos eum eaque atque</p>
-                            <div class="modal-action">
+                            <div class="p-10">
+                                <h2 class="text-xl font-bold">Use cases of Null and Undefined</h2>
+                                <hr>
+                                <p class="text-lg font-semibold pt-2">In JavaScript, both "null" and "undefined" are
+                                    special values used to indicate the absence of a meaningful value</p>
+                                <h2 class="text-4xl font-bold py-4">Null vs Undefined</h2>
+                                <ul role="list" class="marker:text-black list-disc">
+                                    <li><span class="text-lg font-bold">Scope:</span> var variables have function or
+                                        global scope, while let and const variables have block scope. This means that
+                                        let and const variables can only be accessed within the block they are declared
+                                        in, while var variables can be accessed from anywhere within the function they
+                                        are declared in.</li>
+                                    <li><span class="text-lg font-bold">Mutability:</span> var and let variables are
+                                        mutable, which means that their values can be changed after they are declared.
+                                        const variables are immutable, which means that their values cannot be changed
+                                        after they are declared.</li>
+                                    <li> <span class="text-lg font-bold">Hoisting:</span> var variables are hoisted to
+                                        the top of their scope, even though they are not defined until later. let and
+                                        const variables are not hoisted.</li>
+                                </ul>
+                            </div>
+                            <div class="modal-action ">
                                 <!-- if there is a button in form, it will close the modal -->
                                 <button class="btn normal-case">Close</button>
                             </div>
@@ -67,11 +156,13 @@
 
             </div>
         </div>
-        <div class="card card-side bg-base-100 shadow-xl p-6 lg:p-3 flex flex-col">
+        <div class="card card-side bg-base-100 shadow-xl p-6 md:p-2 lg:p-3 flex flex-col">
             <figure><img class="rounded-2xl w-11/12" src="image/rest_api.png" alt="Movie" /></figure>
             <div class="card-body ">
                 <h2 class="text-xl font-bold">What is REST API?</h2>
-                <p>A REST API, or a RESTful API, is an application programming interface that adheres to the principles of Representational State Transfer (REST) . It consists of a set of interlinked resources that make up the API's resource model .</p>
+                <p>A REST API, or a RESTful API, is an application programming interface that adheres to the principles
+                    of Representational State Transfer (REST) . It consists of a set of interlinked resources that make
+                    up the API's resource model .</p>
 
 
                 <div class="card-actions justify-end">
@@ -79,8 +170,18 @@
                     <button class="btn normal-case" onclick="my_modal_7.showModal()">Read more</button>
                     <dialog id="my_modal_7" class="modal modal-bottom sm:modal-middle">
                         <form method="dialog" class="modal-box w-11/12 max-w-5xl mx-auto">
-                            <h3 class="font-bold text-lg">Hello!</h3>
-                            <p class="py-4">Press ESC key or click the button below to close Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et repellat eum, molestiae, laudantium amet incidunt ipsa autem, perspiciatis sapiente at dolor odio labore nemo dolores dolore ex! Quod adipisci vitae inventore voluptas, quae harum cum culpa, animi assumenda provident laudantium? Omnis perspiciatis accusantium odit nisi magnam odio blanditiis error illum placeat sequi, laborum repellendus eaque, deserunt culpa quo fugiat quia itaque doloremque facere corrupti ipsa. Iste dolorem eveniet, repellendus eos eum eaque atque</p>
+                            <div class="p-10">
+                                <h2 class="text-xl font-bold">What is REST API?</h2>
+                                <hr>
+                                <p class="text-lg font-semibold pt-2">REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing web services. REST APIs use HTTP requests to access and manipulate data.</p>
+                                <h2 class="text-4xl font-bold py-4">REST API</h2>
+                                <ul role="list" class="marker:text-black list-disc">
+                                    <li> <span class="text-lg font-bold">Resources:</span>  In a REST API, data is represented as resources, which could be any kind of information, such as objects, collections, or services.</li>
+                                    <li><span class="text-lg font-bold">Uniform Interface:</span>  REST APIs follow a uniform interface, which means that each resource is accessed using a consistent and predictable URL structure. This allows developers to interact with APIs in a standardized way.</li>
+                                    <li><span class="text-lg font-bold">Stateless:</span> A REST API is stateless, meaning that each request from a client to the server must contain all the information necessary for the server to understand and fulfill the request. The server doesn't store any client context between requests.</li>
+                                </ul>
+                                <p class="text-lg font-semibold py-5">REST APIs are widely used for building web services, enabling applications to communicate and exchange data efficiently.</p>
+                            </div>
                             <div class="modal-action">
                                 <!-- if there is a button in form, it will close the modal -->
                                 <button class="btn normal-case">Close</button>
